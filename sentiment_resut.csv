@@ -1,0 +1,226 @@
+,id,created_utc,subreddit,author,title,selftext,permalink,url,sentiment
+0,7nca41,1514768665,wallstreetbets,alreadyinuse5000,Blowing versus sucking,"AAPL just entered a contract to purchase 51 of the newest wind turbines from vwdry. This stock got beat up because the original tax bill was going to eliminate wind energy credits and foreign competition is driving down margins.
+
+The tax bill that was signed kept the credits in place and they just announced the Apple deal.
+
+Edit to fix ticker.....",/r/wallstreetbets/comments/7nca41/blowing_versus_sucking/,https://www.reddit.com/r/wallstreetbets/comments/7nca41/blowing_versus_sucking/,NEGATIVE
+1,7ncxcn,1514776674,pcmasterrace,castatech,Why is it that the new Windows 10 picture viewer is SO much slower than the old one?,"What kind of an upgrade was this? It just sucks all the way around. The 'Metro' interface is terrible, it is slow, buggy, and can't do most the things the old one could. Boy I love MSFT but this kind of stuff really drives me nuts.",/r/pcmasterrace/comments/7ncxcn/why_is_it_that_the_new_windows_10_picture_viewer/,https://www.reddit.com/r/pcmasterrace/comments/7ncxcn/why_is_it_that_the_new_windows_10_picture_viewer/,NEGATIVE
+2,7ndtyy,1514789593,TIMESINDIAauto,AutoNewsAdmin,[Business] - New year looks grim for McD’s staff,,/r/TIMESINDIAauto/comments/7ndtyy/business_new_year_looks_grim_for_mcds_staff/,https://timesofindia.indiatimes.com/business/india-business/new-year-looks-grim-for-mcds-staff/articleshow/62320347.cms,POSITIVE
+3,7ndu9l,1514789727,AutoNewspaper,AutoNewspaperAdmin,[Business] - New year looks grim for McD’s staff | Times of India,,/r/AutoNewspaper/comments/7ndu9l/business_new_year_looks_grim_for_mcds_staff_times/,https://timesofindia.indiatimes.com/business/india-business/new-year-looks-grim-for-mcds-staff/articleshow/62320347.cms,POSITIVE
+4,7neolz,1514805270,teslamotors,AutoModerator,Bi-weekly TSLA Investor Thread,"This will post every other Monday (EST) at 6AM.  Use this thread to comment your own investor links or commentary.  This thread is specifically intended for TSLA related posts.  
+
+This thread is meant only for casual discussion regarding TSLA stock.  Only generic investing-related topics will be allowed as posts.  This thread should **not** be construed as investment advice or guidance.
+",/r/teslamotors/comments/7neolz/biweekly_tsla_investor_thread/,https://www.reddit.com/r/teslamotors/comments/7neolz/biweekly_tsla_investor_thread/,NEGATIVE
+5,7nfc46,1514816538,OnlineBargains,dfslol,[McDonalds] Any size McCafé® Brewed Coffee for $1 plus tax using the My McD's® App [Today Only],,/r/OnlineBargains/comments/7nfc46/mcdonalds_any_size_mccafé_brewed_coffee_for_1/,http://forums.redflagdeals.com/mcdonalds-any-size-mccafu-brewed-coffee-1-plus-tax-using-my-mcds-app-today-only-2159623/#p28742177,POSITIVE
+6,7nfzp3,1514824661,RobinHood,CardinalNumber,The 2018 /r/Robinhood Stock Picking Game,"# tl;dr
+
+ - Stock picking game will last all year and you begin with $100k.
+ - Trades can be made the first five trading days of every month.
+ - During earnings season (Jan, April, July, Oct), trades may be made in the Weekend Profit/Loss/WTF threads as well.
+ - Cash is a position.
+ - No partial shares.
+ - Year end prize is Reddit Gold provided by the site admins at the end of the year.
+ - Comments welcome.
+ - Ski Maine's pristine slopes.
+ 
+# The Game
+
+Everyone begins the year with **$100,000**. You may divide that any way you like. You may choose to keep some or all of your money as cash for a period. The game is open as soon as I post this.
+
+I did a terrible job making time to write this so any questions or comments you have are welcome.
+
+## Post Format
+
+After this first cycle, I will not manually fix trades for you. Posts will be parsed by a very simple regular expression that's looking for posts that look exactly like this:
+
+	- !buy MSFT: 236
+	- !buy AAPL: 999
+	- !buy BRK.A: 1
+	- !buy MEME: 1
+
+...which will look like this list when Reddit parses the Markdown:
+
+ - !buy MSFT: 236
+ - !buy AAPL: 999
+ - !buy BRK.A: 1
+ - !buy MEME: 1
+
+We loop through and execute sells first and move from the top of the list to the bottom so this example would buy up to 236 shares of $MSFT and up to 999 in $AAPL. Robinhood does not support partial shares and you don't have that much money so the attempt would result in...
+
+ - 236 shares of $MSFT @ 85.48/share
+ - 472 shares of $AAPL @ 169.10/share	
+ - zero shares of $BRK.A because you don't have that much cash left over
+ - zero shares of $MEME because it's fake
+ - $11.52 left over in cash
+	
+That's a poor example because I'm headed out right now but this is the math the bot will do. (prices are last execution based on post timestamp or post edit timestamp.)
+
+To sell shares, you'd add a line like this:
+
+	- !sell MSFT: 3000
+	
+And you'll sell up to 300 shares of $MSFT. I'll clarify this tonight. I really gotta go now.
+
+## Supported Instruments
+
+Only instruments supported by Robinhood are allowed to be used in this game. That means no weird OTC stocks or something you heard about in Canada or warrants. If you cannot buy it on Robinhood, you won't be able to buy it here. When options are open for more/most to apply, I'll need time to sort out if and how that would work for our silly little game.
+
+## Corporate Actions
+
+If a company you 'invested' in goes belly up, merges, changes symbol, goes OTC, or has some other major change, you will need to make me aware of it (msg the bot). Otherwise, the position will likely be liquidated.
+
+## Trades
+
+We will not have to worry about this now, but when trades are made, the bot will handle order lots in FIFO. I'm seriously late leaving today. Sorry!
+
+## The Schedule
+
+The 12 monthly trading cycles cover the first five trading days of every month. For example, January 2nd is the first trading day this month so you have until the 8th to make any trades. You may change/update your trades all the way until close on the 5th trading day. **Posts should be edited rather than deleted.**
+
+## Data
+
+Trades will be 'executed' using historical data from Robinhood. For our example above, this would be the URL scraped for data: https://api.robinhood.com/quotes/historicals/?symbols=MSFT,AAPL,BRK.A,MEME&amp;interval=5minute&amp;bounds=trading This allows for prices during extended trading to count and allows us to narrow down prices to the nearest 5min interval. Buys will use the low_price and sells/liquidations will use the high_price.",/r/RobinHood/comments/7nfzp3/the_2018_rrobinhood_stock_picking_game/,https://www.reddit.com/r/RobinHood/comments/7nfzp3/the_2018_rrobinhood_stock_picking_game/,POSITIVE
+7,7ng02z,1514824779,superhot,[deleted],Some suggestions upon playing a bit of MCD,[deleted],/r/superhot/comments/7ng02z/some_suggestions_upon_playing_a_bit_of_mcd/,https://www.reddit.com/r/superhot/comments/7ng02z/some_suggestions_upon_playing_a_bit_of_mcd/,NEGATIVE
+8,7nghsp,1514829819,GameDeals,gamedealsmod,Steam Winter Sale : Day 12,"**Steam Winter Sale 2017** - [Day 1](https://redd.it/7lb6wl) | [Day 2](https://redd.it/7ljbhi) | [Day 3](https://redd.it/7lq1tv) | [Day 4](https://redd.it/7lwjon) | [Day 5](https://redd.it/7m2n2v) | [Day 6](https://redd.it/7m99cq) | [Day 7](https://redd.it/7mgm9j) | [Day 8](https://redd.it/7mo7e1) | [Day 9](https://redd.it/7mvvyl)
+
+Sale runs from *December 21 - January 4.*
+
+---
+
+### Useful Subreddits
+ - Trading games: /r/SteamGameSwap, /r/IndieGameSwap
+ - Gifting games: /r/RandomActsOfGaming, /r/PlayItForward, /r/GiftofGames
+ - Buying advice: /r/ShouldIBuyThisGame
+ - Need a Suggestion?: /r/gamingsuggestions **NEW ADDITION**
+
+---
+
+There will be a post each day to focus on Steam's featured deals, and to give people a chance to discuss the many games that will be on sale.  Discounts will remain the same throughout the sale, so you don't need to wait for a featured deal to purchase.
+
+---
+
+### Featured Deals
+
+|Title|Disc.|$USD|$CAD|€EUR|£GBP|AU ($USD)|BRL$|Metascore|Platform|Cards|PCGW|
+|:-|-:|-:|-:|-:|-:|-:|-:|-:|:-:|:-:|:-:|
+|[Killer Instinct](http://store.steampowered.com/app/577940/)|50%|19.99|21.99|18.49|14.99|19.99|36.49|N/A|W|No|[Yes](//pcgamingwiki.com/wiki/Killer_Instinct)|
+|[Ravenfield](http://store.steampowered.com/app/636480/)|25%|11.24|12.74|11.24|8.24|11.24|20.99|N/A|W/M/L|No|[Yes](//pcgamingwiki.com/wiki/Ravenfield)|
+|[Golf With Your Friends](http://store.steampowered.com/app/431240/)|30%|4.19|4.54|4.19|3.35|4.19|8.39|N/A|W/M/L|No|[Yes](//pcgamingwiki.com/wiki/Golf_With_Your_Friends)|
+|[HIVESWAP: Act 1](http://store.steampowered.com/app/623940/)|38%|4.95|5.44|4.95|3.46|4.95|9.91|N/A|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/HIVESWAP:_Act_1)|
+|[Quake Champions](http://store.steampowered.com/app/611500/)|25%|22.49|29.99|22.49|14.99|22.46|52.49|N/A|W|No|[Yes](//pcgamingwiki.com/wiki/Quake_Champions)|
+|[Planet Coaster](http://store.steampowered.com/app/493340/)|75%|11.24|15.00|9.49|7.49|11.24|20.49|[84](http://www.metacritic.com/game/pc/planet-coaster?ftag=MCD-06-10aaa1f)|W|Yes|[Yes](//pcgamingwiki.com/wiki/Planet_Coaster)|
+|[Stellaris](http://store.steampowered.com/app/281990/)|60%|15.99|17.59|15.99|13.99|15.99|29.19|[78](http://www.metacritic.com/game/pc/stellaris?ftag=MCD-06-10aaa1f)|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/Stellaris)|
+|[Slime Rancher](http://store.steampowered.com/app/433340/)|33%|13.39|14.73|13.39|10.04|13.39|24.78|[81](http://www.metacritic.com/game/pc/slime-rancher?ftag=MCD-06-10aaa1f)|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/Slime_Rancher)|
+|[The Surge](http://store.steampowered.com/app/378540/)|50%|19.99|24.99|19.99|17.49|19.99|49.95|[72](http://www.metacritic.com/game/pc/the-surge?ftag=MCD-06-10aaa1f)|W|Yes|[Yes](//pcgamingwiki.com/wiki/The_Surge)|
+|[Grand Theft Auto V](http://store.steampowered.com/app/271590/)|60%|23.99|27.99|23.99|15.99|23.99|39.99|[96](http://www.metacritic.com/game/pc/grand-theft-auto-v?ftag=MCD-06-10aaa1f)|W|No|[Yes](//pcgamingwiki.com/wiki/Grand_Theft_Auto_V)|
+|[Little Nightmares](http://store.steampowered.com/app/424840/)|50%|9.99|12.49|9.99|7.99|9.99|39.99|[81](http://www.metacritic.com/game/pc/little-nightmares?ftag=MCD-06-10aaa1f)|W|Yes|[Yes](//pcgamingwiki.com/wiki/Little_Nightmares)|
+|[Rock of Ages 2: Bigger &amp; Boulder™](http://store.steampowered.com/app/434460/)|33%|10.04|11.38|10.04|7.36|10.04|18.75|N/A|W|Yes|[Yes](//pcgamingwiki.com/wiki/Rock_of_Ages_II:_Bigger_%26_Boulder)|
+|[H1Z1](http://store.steampowered.com/app/433850/)|75%|4.99|5.49|4.99|3.74|4.99|9.24|N/A|W|No|[Yes](//pcgamingwiki.com/wiki/H1Z1:_King_of_the_Kill)|
+|[Sherlock Holmes: The Devil's Daughter](http://store.steampowered.com/app/350640/)|80%|9.99|10.99|8.99|5.99|9.99|18.19|[65](http://www.metacritic.com/game/pc/sherlock-holmes-the-devils-daughter?ftag=MCD-06-10aaa1f)|W|Yes|[Yes](//pcgamingwiki.com/wiki/Sherlock_Holmes:_The_Devil%27s_Daughter)|
+|[Transistor](http://store.steampowered.com/app/237930/)|75%|4.99|5.49|4.74|3.74|4.99|9.24|[83](http://www.metacritic.com/game/pc/transistor?ftag=MCD-06-10aaa1f)|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/Transistor)|
+|[The Last Hope](http://store.steampowered.com/app/522570/)|75%|.49|.59|.49|.39|.49|1.15|N/A|W|Yes|[Yes](//pcgamingwiki.com/wiki/The_Last_Hope)|
+|[Late Shift](http://store.steampowered.com/app/584980/)|30%|9.09|9.79|9.09|6.99|9.09|18.19|[80](http://www.metacritic.com/game/pc/late-shift?ftag=MCD-06-10aaa1f)|W/M|Yes|[Yes](//pcgamingwiki.com/wiki/Late_Shift)|
+|[Motorsport Manager](http://store.steampowered.com/app/415200/)|75%|8.74|9.67|8.74|6.24|9.99|15.99|[81](http://www.metacritic.com/game/pc/motorsport-manager?ftag=MCD-06-10aaa1f)|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/Motorsport_Manager)|
+|[What Remains of Edith Finch](http://store.steampowered.com/app/501300/)|35%|12.99|14.29|12.99|9.74|12.99|24.04|[89](http://www.metacritic.com/game/pc/what-remains-of-edith-finch?ftag=MCD-06-10aaa1f)|W|Yes|[Yes](//pcgamingwiki.com/wiki/What_Remains_of_Edith_Finch)|
+|[Empyrion - Galactic Survival](http://store.steampowered.com/app/383120/)|50%|9.99|10.99|9.99|7.49|9.99|18.49|N/A|W|No|[Yes](//pcgamingwiki.com/wiki/Empyrion_-_Galactic_Survival)|
+|[The End Is Nigh](http://store.steampowered.com/app/583470/)|50%|7.49|8.49|7.49|5.49|7.49|13.99|[84](http://www.metacritic.com/game/pc/the-end-is-nigh?ftag=MCD-06-10aaa1f)|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/The_End_Is_Nigh)|
+|[Farmer's Dynasty](http://store.steampowered.com/app/678900/)|10%|26.99|30.59|26.99|22.49|26.99|52.19|N/A|W|No|[Yes](//pcgamingwiki.com/wiki/Farmer%27s_Dynasty)|
+|[Duck Season](http://store.steampowered.com/app/503580/)|25%|14.99|16.49|14.99|11.24|14.99|27.74|N/A|W|Yes|[Yes](//pcgamingwiki.com/wiki/Duck_Season)|
+|[ATOMEGA](http://store.steampowered.com/app/619880/)|60%|3.99|5.39|3.99|3.47|4.58|7.99|[65](http://www.metacritic.com/game/pc/atomega?ftag=MCD-06-10aaa1f)|W|Yes|[Yes](//pcgamingwiki.com/wiki/Atomega)|
+|[Thimbleweed Park™](http://store.steampowered.com/app/569860/)|30%|13.99|15.39|13.99|10.49|13.99|25.89|[84](http://www.metacritic.com/game/pc/thimbleweed-park?ftag=MCD-06-10aaa1f)|W/M/L|Yes|[Yes](//pcgamingwiki.com/wiki/Thimbleweed_Park)|
+
+---
+
+### Franchise Deals
+|Franchise|Discount|
+|:--|:--:|
+|[Don't Starve](http://store.steampowered.com/sale/dontstarve/?snr=1_4_4__617)|40-75%|
+|[Worms](http://store.steampowered.com/sale/worms/?snr=1_4_4__617)|66-81%|
+|[Tropico](http://store.steampowered.com/sale/tropico/?snr=1_4_4__617)|75%|
+|[Sniper: Ghost Warrior](http://store.steampowered.com/sale/sniperghostwarrior/?snr=1_4_4__617)|60-80%|
+|[King of Fighters](http://store.steampowered.com/sale/king-of-fighters/?snr=1_4_4__617)|50-75%|
+
+
+---
+
+### Useful Sale Links
+ - [Hidden Gems Thread](https://redd.it/7lbjt7)
+ - [Hidden Gems 2](https://redd.it/7mvy8z) **NEW**
+ - [Price History](http://steamsales.rhekua.com/)
+ - [Enhanced Steam](http://www.enhancedsteam.com/)
+ - SteamDB: [Sales](https://steamdb.info/sales/) | [Bundles](https://steamdb.info/bundles/) | [Price Changes](https://steamdb.info/pricechanges/)
+
+---
+
+### Other Steam Sale Threads
+ - [/r/Games Thread](https://redd.it/7lb6ts)
+ - [/r/Steam Thread](https://redd.it/7lb6z1)
+
+---
+
+Please do not submit individual games as posts during the Steam sale, as they will automatically be removed.  If there is a great deal you want to share with others on a popular title, do so in the comments of these daily threads or in the [hidden gems thread](https://redd.it/7lbjt7).
+
+Good hunting!",/r/GameDeals/comments/7nghsp/steam_winter_sale_day_12/,https://www.reddit.com/r/GameDeals/comments/7nghsp/steam_winter_sale_day_12/,NEGATIVE
+9,7ngkcl,1514830524,NHLHUT,Karlssens65_,Is Evo Kucherov essentially Evo McDavid with a better shot?,"I absolutely love McDavid's Evo but I compared him to Kuch on HUTDB and it looks like Kucherov is nearly the same but with a considerably better shot. Do you still notice a difference in speed when comparing him to McDavid? One of my favorite attributes of McD is how he can blow by nearly anyone on defense.
+
+Here is how they compare on HUTDB. I noticed 98 speed vs 99 speed between the two cards being really the only difference (minus endurance) in their skating categories:
+
+https://hutdb.net/18/compare/21418/21298",/r/NHLHUT/comments/7ngkcl/is_evo_kucherov_essentially_evo_mcdavid_with_a/,https://www.reddit.com/r/NHLHUT/comments/7ngkcl/is_evo_kucherov_essentially_evo_mcdavid_with_a/,NEGATIVE
+10,7ngqni,1514832261,wallstreetbets,juicegod101,Long $TSLA,,/r/wallstreetbets/comments/7ngqni/long_tsla/,https://i.redd.it/ezb1o65f4i701.png,POSITIVE
+11,7nguxl,1514833415,halifax,DollarMacBig,$1 (or $1.50*) Big Mac (or McChicken/McMuffin) with McD's App this week.,,/r/halifax/comments/7nguxl/1_or_150_big_mac_or_mcchickenmcmuffin_with_mcds/,https://i.redd.it/gu2x077t7i701.jpg,POSITIVE
+12,7nhc2r,1514838093,investing,InvestingLifeSavings,Hesitant to invest in $AAPL,"Looking at AAPLs fundamentals and the pile of cash they are about to be sitting on due to the tax bill makes me think AAPL might be a good investment moving forward. The valuation is also excellent relative to other popular companies. Here's why I don't want to put my money in just yet.
+
+The biggest risk I see is that 70% of Apple's revenue comes from iPhone sales. I think iPhones are great, in fact I'm typing this on my iPhone right now. The iPhone X is too expensive and there has been bad publicity surrounding iPhone batteries lately which could eat into their sales numbers. Selling at over $1000 is a deal breaker for me and I would strongly consider taking my business to Samsung if it was time for a new phone. I can only imagine other consumers must feel the same way.
+
+Additionally, part of the reason the company is so profitable is because the profit margins on iPhones are huge at about 60%. Apple is clearly a master of marketing and maintaining a strong customer base. I worry that the next time there's an economic downturn, no one is going to be able to afford these luxury products and Apple will have to drastically lower its profit margins in order to stay competitive. Additionally, there may be new, cheap smartphones which may not be as powerful as an iPhone, but gets the job done. I'm thinking like how an amazon fire 7 for $50 is expected to compete with the Apple iPad for $300+. 
+
+Lastly and least importantly, looking at the max history of the AAPL stock price charts shows that the company tends to fall out of favor for long periods of time every few years. I don't know much about technical analysis, but based on recent news it seems like the company could be at a turning point once again. 
+
+I really do want to invest in this company based on the amount of cash they'll be sitting on for reinvestment, the amount of cash that continues pouring in, and the strength of the brand name, but for these reasons I feel like I shouldn't. 
+",/r/investing/comments/7nhc2r/hesitant_to_invest_in_aapl/,https://www.reddit.com/r/investing/comments/7nhc2r/hesitant_to_invest_in_aapl/,NEGATIVE
+13,7nhgga,1514839266,wallstreetbets,ape-x-predator,Get ready to short $TSLA - they finally added rain-sensing wipers to AP2 cars and the fanbois are going to bid it way up at the open,,/r/wallstreetbets/comments/7nhgga/get_ready_to_short_tsla_they_finally_added/,https://np.reddit.com/r/teslamotors/comments/7neqp0/2017503_xxxx_is_out_with_auto_wipers/,POSITIVE
+14,7nhlql,1514840657,stocks,dgord0,TSLA,[removed],/r/stocks/comments/7nhlql/tsla/,https://www.reddit.com/r/stocks/comments/7nhlql/tsla/,NEGATIVE
+15,7nhux3,1514843130,datamining,behnamrahdari,Nvidia Revs Engine On Multibillion-Dollar Market Opportunity (NVDA) : https://t.co/zo730trWs8 #Health_care #Welfare #Machine_learning #Scientif,,/r/datamining/comments/7nhux3/nvidia_revs_engine_on_multibilliondollar_market/,https://twitter.com/behnamrahdari/status/947945856757530625,POSITIVE
+16,7nhuxb,1514843130,datamining,behnamrahdari,Nvidia Revs Engine On Multibillion-Dollar Market Opportunity (NVDA) : https://t.co/zo730trWs8 #Health_care... https://t.co/mfvakPC5kO,,/r/datamining/comments/7nhuxb/nvidia_revs_engine_on_multibilliondollar_market/,https://twitter.com/behnamrahdari/status/947945945190281217,POSITIVE
+17,7nhwud,1514843654,stocks,Djg35,Stock mix help required (ETF),"I’ve decided I’m most likely interested in just ETF investing.  I’m confident in 6-8% YOY gains and the security that brings long run.
+
+Right now I own (this is my investment outside of 401k and Roth IRA, also.. I decided I wanted more money in market so this does not represent any retirement money)
+
+VTI - 13.35
+VOO - 23.8
+VWO - 11.93
+MGK - 11.9
+AAPL - 21.9
+
+I want to sell Apple, consolidate VTI into VOO and decide how to work with VOO, VWO and MGK.  Does MGK make sense?  What other ETFs should I be looking into to continue to diversify?
+
+Edit: those are percentages ",/r/stocks/comments/7nhwud/stock_mix_help_required_etf/,https://www.reddit.com/r/stocks/comments/7nhwud/stock_mix_help_required_etf/,NEGATIVE
+18,7nhyym,1514844243,RobinHoodPennyStocks,Friezan,"New Year, New You, New Portfolio","I've been on the Robinhood platform since early last month, and damn I am hooked.
+
+Here's my portfolio. It's all biotech/pharma/BABA. Once I start getting more working capital, I look to also begin to invest in some more conservative blue-chip stocks. $NVDA, $INTC, and $MSFT are all looking to have good growth this next year. 
+
+Below is my portfolio:
+
+* $BPMX -- 33%. Riding pretty heavy and feel pretty confident in this 
+* $IGC -- 7.5%. Seeing pretty good returns from this so-far. I'm curious to see how CA effects the weed stock market in general.
+* $XXII  -- 15%. They're the only company to have IP in and succesfully modulate nicotine levels. With FDAs recent discussion on nic modulation in 2019, there's promise here
+* $CDXS -- 5.5%. Sales growth has consistently been positive, and has been pretty stable. I expect &gt;7% return
+* $BABA -- 34%. China's Amazon. This is picking up a lot of US attention, and not to mention the growth of China's middle-class. I'm holding long on this one.
+* $LTEA -- 5%. Recent blockchain anouncement and volatility really made me interested in this. This is just a fun pick :)
+
+What are your guys thoughts? I'd be interested to see what penny stocks you guys are looking at in the beginning of this year.
+
+Edit: today went great. :)",/r/RobinHoodPennyStocks/comments/7nhyym/new_year_new_you_new_portfolio/,https://www.reddit.com/r/RobinHoodPennyStocks/comments/7nhyym/new_year_new_you_new_portfolio/,POSITIVE
+19,7ni0o7,1514844721,personalfinance,Djg35,ETF advice please!,"I’ve decided I’m most likely interested in just ETF investing.  I’m confident in 6-8% YOY gains and the security that brings long run.
+
+Right now I own (this is my investment outside of 401k and Roth IRA, also.. I decided I wanted more money in market so this does not represent any retirement money)
+
+VTI - 13.35
+VOO - 23.8
+VWO - 11.93
+MGK - 11.9
+AAPL - 21.9
+
+I want to sell Apple, consolidate VTI into VOO and decide how to work with VOO, VWO and MGK.  Does MGK make sense?  What other ETFs should I be looking into to continue to diversify?
+
+Edit: those are percentages ",/r/personalfinance/comments/7ni0o7/etf_advice_please/,https://www.reddit.com/r/personalfinance/comments/7ni0o7/etf_advice_please/,NEGATIVE
